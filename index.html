@@ -6,128 +6,190 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     :root{
-      --brand:#0f3d91; --ink:#1a1a1a; --muted:#555; --bg:#ffffff; --soft:#f5f7fb;
-      --link:#0a66c2; --chip:#e9eef9; --border:#e6e6e6;
+      --brand:#143a7b; --ink:#111; --muted:#555; --bg:#fff; --border:#e7e7e7;
+      --soft:#f7f9fc; --link:#0a66c2;
     }
-    *{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Inter,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
     a{color:var(--link);text-decoration:none} a:hover{text-decoration:underline}
-    .topbar{background:var(--brand);color:#fff;padding:14px 18px;position:sticky;top:0;z-index:10}
-    .nav{max-width:980px;margin:0 auto;display:flex;gap:24px;align-items:center;justify-content:space-between}
-    .nav a{color:#fff;opacity:.95} .nav a:hover{opacity:1}
-    .wrap{max-width:980px;margin:28px auto;padding:0 18px}
-    .hero{display:grid;grid-template-columns:140px 1fr;gap:22px;align-items:center}
-    .avatar{width:140px;height:140px;border-radius:12px;background:#ddd url('me.jpg') center/cover no-repeat;border:1px solid var(--border)}
-    h1{margin:0 0 6px;font-size:28px} .subtitle{color:var(--muted)}
-    .chips{margin-top:8px;display:flex;flex-wrap:wrap;gap:8px}
-    .chip{background:var(--chip);padding:6px 10px;border-radius:999px;font-size:13px;border:1px solid var(--border)}
-    .section{margin-top:30px}
-    .section h2{font-size:20px;margin:0 0 10px;color:var(--brand)}
-    .card{background:var(--soft);border:1px solid var(--border);border-radius:10px;padding:14px;margin:10px 0}
-    .news li{margin:6px 0}
-    .list h3{margin:0 0 4px}
-    .footer{margin:40px 0 24px;color:var(--muted);font-size:14px;text-align:center}
-    .meta{color:var(--muted);font-size:14px}
+    .wrap{max-width:1050px;margin:0 auto;padding:0 22px}
+    /* top bar */
+    .top{background:var(--brand);color:#fff}
+    .top .wrap{display:flex;align-items:center;justify-content:space-between;padding:14px 22px}
+    .top a{color:#fff;opacity:.95} .top a:hover{opacity:1}
+    /* hero */
+    .hero{display:grid;grid-template-columns:220px 1fr;gap:24px;align-items:start;padding:28px 0 10px}
+    .avatar{width:220px;height:280px;border-radius:6px;background:#d9d9d9 url('me.jpg') center/cover no-repeat;border:1px solid var(--border)}
+    h1{font-size:34px;margin:0 0 8px}
     .links a{margin-right:12px}
+    /* chips */
+    .chips{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}
+    .chip{background:#eef2ff;border:1px solid var(--border);border-radius:999px;padding:8px 12px;font-size:14px}
+    /* sections */
+    section{padding:12px 0 18px}
+    section h2{font-size:28px;margin:18px 0 12px;color:var(--brand)}
+    .muted{color:var(--muted)}
+    /* about card */
+    .aboutcard{background:var(--soft);border:1px solid var(--border);border-radius:12px;padding:16px 18px}
+    /* news */
+    .news li{margin:6px 0}
+    /* publications */
+    .publist{display:grid;gap:24px}
+    .pub{display:grid;grid-template-columns:260px 1fr;gap:18px;align-items:start;padding:14px;border:1px solid var(--border);border-radius:10px;background:#fff}
+    .thumb{width:100%;height:160px;background:linear-gradient(135deg,#e9eef7,#f7f9fc);border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--muted)}
+    .pub h3{margin:0 0 6px}
+    .meta{color:var(--muted);font-size:14px;margin-bottom:6px}
+    .pill{display:inline-block;font-size:12px;border:1px solid var(--border);border-radius:999px;padding:3px 10px;margin-right:8px;background:#f5f7fb}
+    /* experience / service */
+    ul.plain{list-style: disc; padding-left: 22px}
+    /* footer */
+    footer{padding:28px 0 34px;color:var(--muted);text-align:center;border-top:1px solid var(--border);margin-top:26px}
   </style>
 </head>
 <body>
-  <div class="topbar">
-    <div class="nav">
+
+  <!-- Top -->
+  <div class="top">
+    <div class="wrap">
       <strong>Nahed Abu Zaid</strong>
-      <div>
-        <a href="#about">Home</a>
-        &nbsp;·&nbsp;<a href="#publications">Publications</a>
-        &nbsp;·&nbsp;<a href="#news">News</a>
-        &nbsp;·&nbsp;<a href="#contact">Contact</a>
-      </div>
+      <nav>
+        <a href="#about">Home</a> &nbsp;·&nbsp;
+        <a href="#news">News</a> &nbsp;·&nbsp;
+        <a href="#pubs">Selected Publications</a> &nbsp;·&nbsp;
+        <a href="#exp">Research & Industry Experience</a> &nbsp;·&nbsp;
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
   </div>
 
   <main class="wrap">
-    <!-- HERO -->
+
+    <!-- Intro -->
     <section id="about" class="hero">
-      <div class="avatar" title="Upload me.jpg to replace the placeholder"></div>
+      <div class="avatar" title="Upload me.jpg in the repo root to show your photo"></div>
       <div>
         <h1>Nahed Abu Zaid</h1>
-        <div class="subtitle">Ph.D. Candidate, Computer Science @ North Carolina State University</div>
-        <div class="links">
+        <p class="muted">Ph.D. candidate in Computer Science at <strong>North Carolina State University</strong>.</p>
+
+        <p class="links">
           <a href="mailto:naabuzai@ncsu.edu">naabuzai@ncsu.edu</a> ·
-          <a href="https://www.linkedin.com/in/nahedabuzaidcsc" target="_blank">LinkedIn</a> ·
-          <a href="https://github.com/nahedabuzaid" target="_blank">GitHub</a>
-        </div>
+          <a target="_blank" href="https://www.linkedin.com/in/nahedabuzaidcsc">LinkedIn</a> ·
+          <a target="_blank" href="https://github.com/nahedabuzaid">GitHub</a> ·
+          <a target="_blank" href="#">Google Scholar</a>
+        </p>
+
+        <!-- interest labels -->
         <div class="chips">
-          <span class="chip">LLMs & NLP</span><span class="chip">Generative AI</span>
-          <span class="chip">Knowledge Graphs</span><span class="chip">GNNs</span>
-          <span class="chip">RAG & Graph-RAG</span><span class="chip">Explainability</span>
+          <span class="chip">LLMs & NLP</span>
+          <span class="chip">Generative AI</span>
+          <span class="chip">Knowledge Graphs</span>
+          <span class="chip">GNNs</span>
+          <span class="chip">RAG & Graph-RAG</span>
+          <span class="chip">Explainability</span>
+        </div>
+
+        <div class="aboutcard">
+          I am a scholar at the <strong>STEPS Center</strong> — see my profile
+          <a target="_blank" href="https://steps-center.org/steps-team/nahed-abu-zaid/">here</a>. My research spans
+          <em>language models</em>, <em>knowledge-graph reasoning</em>, and <em>generative AI</em> for scientific and biomedical discovery.
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="card">
-        <p>
-          I build scalable, explainable AI systems that combine <strong>language models</strong> with
-          <strong>knowledge-graph reasoning</strong> for scientific and biomedical discovery. I work as an
-          <strong>Applied AI Researcher @ RENCI</strong> and <strong>Data Scientist @ STEPS</strong>, focusing on
-          foundation model adaptation (LoRA/RLHF/DPO), Graph-RAG, multi-agent orchestration, and GPU-accelerated pipelines.
-        </p>
-        <p class="meta">
-          Primary field for NVIDIA Fellowship: <em>AI — Language Models &amp; Speech</em> (with Generative AI + Neural Architectures as overlaps).
-        </p>
-      </div>
-    </section>
-
-    <!-- NEWS -->
-    <section id="news" class="section">
+    <!-- News (empty for now) -->
+    <section id="news">
       <h2>News</h2>
       <ul class="news">
-        <li>[08/2025] Preparing application for <strong>NVIDIA Graduate Fellowship (2026–2027)</strong>.</li>
-        <li>[07/2025] Submitted <em>RL-CURATE-KG</em> to KGBigData 2025.</li>
-        <li>[12/2024] <em>INTEGRATE-KG</em> published at IEEE BigData 2024.</li>
+        <!-- add items here later -->
       </ul>
     </section>
 
-    <!-- PUBLICATIONS -->
-    <section id="publications" class="section list">
+    <!-- Selected Publications -->
+    <section id="pubs">
       <h2>Selected Publications</h2>
+      <p class="muted">Please refer to my Google Scholar profile for the full list of publications.</p>
 
-      <div class="card">
-        <h3>INTEGRATE-KG: A Workflow for Unifying Heterogeneous Data Driven by Shared Languages</h3>
-        <div class="meta">IEEE BigData 2024</div>
-        <div><a href="#">Paper</a> · <a href="#">BibTeX</a></div>
-      </div>
+      <div class="publist">
 
-      <div class="card">
-        <h3>AMSP-KG: Sentence-to-Graph Mapping using Transformers</h3>
-        <div class="meta">in preparation</div>
-        <div><a href="#">Preprint (soon)</a></div>
-      </div>
+        <!-- 2025 — TARRAGON (preprint) -->
+        <article class="pub">
+          <div class="thumb">Upload: assets/pubs/tarragon.jpg</div>
+          <div>
+            <h3>TARRAGON: Therapeutic Target Applicability Ranking and Retrieval-Augmented Generation Over Networks</h3>
+            <div class="meta">Preprint — bioRxiv, 2025</div>
+            <div class="meta">J. M. T. Beasley, K. Schatz, E. Ding, M. DeLuca, <strong>N. A. Zaid</strong>, N. N. Tucker, …</div>
+            <p>
+              <span class="pill">Preprint</span>
+              <a target="_blank" href="#">Paper</a> ·
+              <a target="_blank" href="#">Project</a>
+            </p>
+          </div>
+        </article>
 
-      <div class="card">
-        <h3>UNIFY-DDI: A Hierarchical Inference Pipeline for Reliable Drug Interaction Prediction</h3>
-        <div class="meta">manuscript in progress</div>
+        <!-- 2024 — INTEGRATE-KG -->
+        <article class="pub">
+          <div class="thumb">Upload: assets/pubs/integrate-kg.jpg</div>
+          <div>
+            <h3>INTEGRATE-KG: A Workflow for Unifying Heterogeneous Data Driven by Shared Languages</h3>
+            <div class="meta">IEEE BigData, 2024</div>
+            <div class="meta"><strong>N. A. Zaid</strong>, K. Schatz, K. Bourne, D. Harry, C. Hendren, A.-M. Marshall, …, R. Chirkova</div>
+            <p>
+              <span class="pill">Published</span>
+              <a target="_blank" href="https://doi.org/10.1109/BigData62323.2024.10825736">DOI</a> ·
+              <a target="_blank" href="#">PDF</a>
+            </p>
+          </div>
+        </article>
+
+        <!-- 2024 — Semantics-Aware Path Ranking -->
+        <article class="pub">
+          <div class="thumb">Upload: assets/pubs/sem-path-ranking.jpg</div>
+          <div>
+            <h3>Semantics-Aware Path Ranking on Information Extracted from Knowledge Graphs</h3>
+            <div class="meta">IEEE BigData, 2024</div>
+            <div class="meta">Z. Mei, K. Schatz, <strong>N. A. Zaid</strong>, R. Chirkova</div>
+            <p>
+              <span class="pill">Published</span>
+              <a target="_blank" href="#">Paper</a>
+            </p>
+          </div>
+        </article>
+
       </div>
     </section>
 
-    <!-- EXPERIENCE -->
-    <section class="section list">
-      <h2>Experience</h2>
-      <div class="card"><strong>Applied AI Researcher</strong> — RENCI, UNC-Chapel Hill (2023–Present)</div>
-      <div class="card"><strong>Data Scientist</strong> — STEPS Center, NC State (2023–Present)</div>
+    <!-- Research & Industry Experience -->
+    <section id="exp">
+      <h2>Research & Industry Experience</h2>
+      <ul class="plain">
+        <li><strong>Data Scientist</strong>, STEPS Center, NC State University — Phosphorus Knowledge Hub (PASTOR), Graph-RAG & dashboards (2023–Present)</li>
+      </ul>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="section">
+    <!-- Professional Service -->
+    <section id="service">
+      <h2>Professional Service & Mentorship</h2>
+      <ul class="plain">
+        <li><strong>REU Monitor</strong>, NSF REU Program, NC State (2025)</li>
+        <li><strong>Orientation Team Member</strong>, Office of Global Engagement, NC State (Summer 2025)</li>
+        <li><strong>ISSERV Mentor & Volunteer</strong>, STEM Outreach & Inclusion — NC State (2023–Present)</li>
+        <li><strong>Lecturer & Research Mentor</strong>, Prince Sattam University (2017–2023)</li>
+      </ul>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
       <h2>Contact</h2>
-      <div class="card">
+      <p>
         Email: <a href="mailto:naabuzai@ncsu.edu">naabuzai@ncsu.edu</a><br/>
         Raleigh, North Carolina, USA
-      </div>
+      </p>
     </section>
 
-    <div class="footer">
-      © <span id="y"></span> Nahed Abu Zaid — Built with GitHub Pages
-    </div>
+    <footer>
+      © <span id="y"></span> Nahed Abu Zaid — Last updated by hand
+    </footer>
+
   </main>
 
   <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
