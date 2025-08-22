@@ -6,43 +6,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     :root{
-      --brand:#143a7b; --ink:#111; --muted:#555; --bg:#fff; --border:#e7e7e7;
-      --soft:#f7f9fc; --link:#0a66c2;
+      --brand:#0f3d91; --ink:#1a1a1a; --muted:#555; --bg:#ffffff; --soft:#f5f7fb;
+      --link:#0a66c2; --chip:#e9eef9; --border:#e6e6e6;
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Inter,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+    *{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55}
     a{color:var(--link);text-decoration:none} a:hover{text-decoration:underline}
-    .wrap{max-width:1050px;margin:0 auto;padding:0 22px}
-    /* top bar */
-    .top{background:var(--brand);color:#fff}
-    .top .wrap{display:flex;align-items:center;justify-content:space-between;padding:14px 22px}
-    .top a{color:#fff;opacity:.95} .top a:hover{opacity:1}
-    /* hero */
-    .hero{display:grid;grid-template-columns:220px 1fr;gap:24px;align-items:start;padding:28px 0 10px}
-    .avatar{width:220px;height:280px;border-radius:6px;background:#d9d9d9 url('me.jpg') center/cover no-repeat;border:1px solid var(--border)}
-    h1{font-size:34px;margin:0 0 8px}
-    .links a{margin-right:12px}
-    /* sections */
-    section{padding:12px 0 18px}
-    section h2{font-size:28px;margin:18px 0 12px;color:var(--brand)}
-    .muted{color:var(--muted)}
-    /* news */
+    .topbar{background:var(--brand);color:#fff;padding:14px 18px;position:sticky;top:0;z-index:10}
+    .nav{max-width:980px;margin:0 auto;display:flex;gap:24px;align-items:center;justify-content:space-between}
+    .nav a{color:#fff;opacity:.95} .nav a:hover{opacity:1}
+    .wrap{max-width:980px;margin:28px auto;padding:0 18px}
+    .hero{display:grid;grid-template-columns:140px 1fr;gap:22px;align-items:center}
+    .avatar{width:140px;height:140px;border-radius:12px;background:#ddd url('me.jpg') center/cover no-repeat;border:1px solid var(--border)}
+    h1{margin:0 0 6px;font-size:28px} .subtitle{color:var(--muted)}
+    .chips{margin-top:8px;display:flex;flex-wrap:wrap;gap:8px}
+    .chip{background:var(--chip);padding:6px 10px;border-radius:999px;font-size:13px;border:1px solid var(--border)}
+    .section{margin-top:30px}
+    .section h2{font-size:20px;margin:0 0 10px;color:var(--brand)}
+    .card{background:var(--soft);border:1px solid var(--border);border-radius:10px;padding:14px;margin:10px 0}
     .news li{margin:6px 0}
-    /* publications */
-    .publist{display:grid;gap:24px}
-    .pub{display:grid;grid-template-columns:260px 1fr;gap:18px;align-items:start;padding:14px;border:1px solid var(--border);border-radius:10px;background:#fff}
-    .thumb{width:100%;height:160px;background:linear-gradient(135deg,#e9eef7,#f7f9fc);border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--muted)}
-    .pub h3{margin:0 0 6px}
-    .meta{color:var(--muted);font-size:14px;margin-bottom:6px}
-    .pill{display:inline-block;font-size:12px;border:1px solid var(--border);border-radius:999px;padding:3px 10px;margin-right:8px;background:#f5f7fb}
-    /* experience / service */
-    ul.plain{list-style: disc; padding-left: 22px}
-    /* footer */
-    footer{padding:28px 0 34px;color:var(--muted);text-align:center;border-top:1px solid var(--border);margin-top:26px}
+    .list h3{margin:0 0 4px}
+    .footer{margin:40px 0 24px;color:var(--muted);font-size:14px;text-align:center}
+    .meta{color:var(--muted);font-size:14px}
+    .links a{margin-right:12px}
   </style>
 </head>
 <body>
-
   <!-- Top -->
   <div class="top">
     <div class="wrap">
@@ -142,21 +130,6 @@
             </p>
           </div>
         </article>
-
-        <!-- 2023 — Journal article -->
-        <article class="pub">
-          <div class="thumb">Upload: assets/pubs/elearn-2023.jpg</div>
-          <div>
-            <h3>Measuring the Degree of Satisfaction among Preparatory Year Students Regarding Virtual Lessons and Educational Platforms …</h3>
-            <div class="meta">Journal of Education and E-Learning Research, 2023</div>
-            <div class="meta"><strong>N. A. Zaid</strong>, W. Al-Abweeny, S. Bani-AlDomi, K. Hassan, A. Hakami</div>
-            <p>
-              <span class="pill">Published</span>
-              <a target="_blank" href="#">Paper</a>
-            </p>
-          </div>
-        </article>
-
       </div>
     </section>
 
@@ -165,7 +138,6 @@
       <h2>Research & Industry Experience</h2>
       <ul class="plain">
         <li><strong>Data Scientist</strong>, STEPS Center, NC State University — Phosphorus Knowledge Hub (PASTOR), Graph-RAG & dashboards (2023–Present)</li>
-        <li><strong>Applied AI Researcher</strong>, RENCI (UNC-Chapel Hill) — AMSP-KG, SAPRA, DDI prediction, KG completion (2023–Present)</li>
       </ul>
     </section>
 
@@ -175,7 +147,7 @@
       <ul class="plain">
         <li><strong>REU Monitor</strong>, NSF REU Program, NC State (2025)</li>
         <li><strong>Orientation Team Member</strong>, Office of Global Engagement, NC State (Summer 2025)</li>
-        <li><strong>ISSERV Mentor & Volunteer</strong>, STEM Outreach & Inclusion — NC State (2023–Present)</li>
+        <li><strong>ISSERV Mentor & Volunteer</strong> NC State (2023–Present)</li>
         <li><strong>Lecturer & Research Mentor</strong>, Prince Sattam University (2017–2023)</li>
       </ul>
     </section>
