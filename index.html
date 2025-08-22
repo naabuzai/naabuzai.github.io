@@ -9,8 +9,7 @@
       --brand:#0f3d91; --ink:#1a1a1a; --muted:#555; --bg:#ffffff; --soft:#f5f7fb;
       --link:#0a66c2; --chip:#e9eef9; --border:#e6e6e6;
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55}
+    *{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55}
     a{color:var(--link);text-decoration:none} a:hover{text-decoration:underline}
     .topbar{background:var(--brand);color:#fff;padding:14px 18px;position:sticky;top:0;z-index:10}
     .nav{max-width:980px;margin:0 auto;display:flex;gap:24px;align-items:center;justify-content:space-between}
@@ -18,13 +17,13 @@
     .wrap{max-width:980px;margin:28px auto;padding:0 18px}
     .hero{display:grid;grid-template-columns:140px 1fr;gap:22px;align-items:center}
     .avatar{width:140px;height:140px;border-radius:12px;background:#ddd url('me.jpg') center/cover no-repeat;border:1px solid var(--border)}
-    h1{margin:0 0 6px;font-size:28px}
-    .subtitle{color:var(--muted)}
+    h1{margin:0 0 6px;font-size:28px} .subtitle{color:var(--muted)}
     .chips{margin-top:8px;display:flex;flex-wrap:wrap;gap:8px}
     .chip{background:var(--chip);padding:6px 10px;border-radius:999px;font-size:13px;border:1px solid var(--border)}
     .section{margin-top:30px}
     .section h2{font-size:20px;margin:0 0 10px;color:var(--brand)}
     .card{background:var(--soft);border:1px solid var(--border);border-radius:10px;padding:14px;margin:10px 0}
+    .news li{margin:6px 0}
     .list h3{margin:0 0 4px}
     .footer{margin:40px 0 24px;color:var(--muted);font-size:14px;text-align:center}
     .meta{color:var(--muted);font-size:14px}
@@ -38,6 +37,7 @@
       <div>
         <a href="#about">Home</a>
         &nbsp;·&nbsp;<a href="#publications">Publications</a>
+        &nbsp;·&nbsp;<a href="#news">News</a>
         &nbsp;·&nbsp;<a href="#contact">Contact</a>
       </div>
     </div>
@@ -63,57 +63,49 @@
       </div>
     </section>
 
-    <!-- SHORT STEPS LINE -->
     <section class="section">
       <div class="card">
         <p>
-          I am a scholar at the STEPS Center — see my profile
-          <a href="https://steps-center.org/steps-team/nahed-abu-zaid/" target="_blank">here</a>.
+          I build scalable, explainable AI systems that combine <strong>language models</strong> with
+          <strong>knowledge-graph reasoning</strong> for scientific and biomedical discovery. I work as an
+          <strong>Applied AI Researcher @ RENCI</strong> and <strong>Data Scientist @ STEPS</strong>, focusing on
+          foundation model adaptation (LoRA/RLHF/DPO), Graph-RAG, multi-agent orchestration, and GPU-accelerated pipelines.
+        </p>
+        <p class="meta">
+          Primary field for NVIDIA Fellowship: <em>AI — Language Models &amp; Speech</em> (with Generative AI + Neural Architectures as overlaps).
         </p>
       </div>
     </section>
 
-    <!-- PUBLICATIONS (published + preprint only) -->
+    <!-- NEWS -->
+    <section id="news" class="section">
+      <h2>News</h2>
+      <ul class="news">
+        <li>[08/2025] Preparing application for <strong>NVIDIA Graduate Fellowship (2026–2027)</strong>.</li>
+        <li>[07/2025] Submitted <em>RL-CURATE-KG</em> to KGBigData 2025.</li>
+        <li>[12/2024] <em>INTEGRATE-KG</em> published at IEEE BigData 2024.</li>
+      </ul>
+    </section>
+
+    <!-- PUBLICATIONS -->
     <section id="publications" class="section list">
       <h2>Selected Publications</h2>
 
       <div class="card">
         <h3>INTEGRATE-KG: A Workflow for Unifying Heterogeneous Data Driven by Shared Languages</h3>
-        <div class="meta">Published — IEEE BigData 2024</div>
-        <div>
-          <span class="chip">Published</span>
-          <a href="https://doi.org/10.1109/BigData62323.2024.10825736" target="_blank">DOI</a>
-        </div>
+        <div class="meta">IEEE BigData 2024</div>
+        <div><a href="#">Paper</a> · <a href="#">BibTeX</a></div>
       </div>
 
       <div class="card">
-        <h3>Semantics-Aware Path Ranking On Information Extracted from Knowledge Graphs</h3>
-        <div class="meta">Published — IEEE BigData 2024</div>
-        <div><span class="chip">Published</span></div>
+        <h3>AMSP-KG: Sentence-to-Graph Mapping using Transformers</h3>
+        <div class="meta">in preparation</div>
+        <div><a href="#">Preprint (soon)</a></div>
       </div>
 
       <div class="card">
-        <h3>TARRAGON: Therapeutic Target Applicability Ranking and Retrieval-Augmented Generation Over Networks</h3>
-        <div class="meta">Preprint — bioRxiv 2025</div>
-        <div><span class="chip">Preprint</span> <a href="#" target="_blank">Preprint link</a></div>
-      </div>
-
-      <div class="card">
-        <h3>Measuring the Degree of Satisfaction among Preparatory Year Students Regarding the Virtual Lessons and Educational Platforms...</h3>
-        <div class="meta">Published — Journal of Education and E-Learning Research, 2023</div>
-        <div><span class="chip">Published</span></div>
-      </div>
-
-      <div class="card">
-        <h3>Arabic Stemmer System Based on Rules of Roots</h3>
-        <div class="meta">Published — International Journal of Information Technology and Language Studies, 2018</div>
-        <div><span class="chip">Published</span></div>
-      </div>
-
-      <div class="card">
-        <h3>Web Structural Metrics Evaluation</h3>
-        <div class="meta">Published — Developments in E-Systems Engineering, 2010</div>
-        <div><span class="chip">Published</span></div>
+        <h3>UNIFY-DDI: A Hierarchical Inference Pipeline for Reliable Drug Interaction Prediction</h3>
+        <div class="meta">manuscript in progress</div>
       </div>
     </section>
 
